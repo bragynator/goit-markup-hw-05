@@ -38,6 +38,10 @@ img {
 	height: auto;
 }
 
+button {
+	padding: 0;
+}
+
 .container {
 	width: 1200px;
 	margin: 0 auto;
@@ -629,4 +633,60 @@ a[href="https://goo.gl/maps/Sd4Lendt8BvaJmYn8"]
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
 	margin: -1px;
+}
+
+.backdrop {
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.2);
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+	width: 528px;
+	min-height: 581px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	background-color: #ffffff;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+
+	transform: translate(-50%, -50%) scale(1);
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 8px;
+	right: 8px;
+
+	background-color: transparent;
+	border-radius: 50%;
+	border-color: rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+}
+
+.modal-close-icon {
+	fill: #000000;
+}
+
+.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+	transform: translate(-50%, -50%) scale(1.15);
 }
