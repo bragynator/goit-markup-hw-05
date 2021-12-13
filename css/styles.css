@@ -281,17 +281,17 @@ button {
 }
 
 .about-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	min-height: 70px;
-	padding-top: 27px;
-	padding-bottom: 27px;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 
 	font-size: 14px;
 	line-height: 1.14;
-	text-align: center;
 	letter-spacing: 0.03em;
 	text-transform: uppercase;
 
@@ -594,7 +594,8 @@ a[href="https://goo.gl/maps/Sd4Lendt8BvaJmYn8"]
 	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-link:hover .portfolio-card-text {
+.portfolio-link:hover .portfolio-card-text,
+.portfolio-link:focus .portfolio-card-text {
 	transform: translateY(0);
 }
 
